@@ -1,0 +1,107 @@
+/* Premium Navbar Design */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    /* Fallback sans-serif if Inter is not loaded */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 48px;
+    /* Adjusted to fit the attached logo nicely */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Underline effect for links */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d9488;
+    /* Matches teal color from logo */
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #0d9488;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn button {
+    background: linear-gradient(135deg, #0d9488, #0f766e);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-btn button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+.nav-btn button:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Fallback for mobile views */
+    }
+}

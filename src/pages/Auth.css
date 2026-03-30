@@ -1,0 +1,178 @@
+/* 🌌 Animated Medical Background */
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(-45deg, #0d9488, #0f766e, #0891b2, #1e3a8a);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 🧊 Glass Card */
+.auth-box {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    padding: 40px;
+    border-radius: 18px;
+    width: 360px;
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    color: #ffffff;
+
+    animation: fadeIn 1s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Medical icon */
+/* Logo */
+.auth-logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Heading */
+.auth-box h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* ✨ Inputs */
+.auth-box input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+
+    border-radius: 10px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+
+    outline: none;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.auth-box input::placeholder {
+    color: #e0f2f1;
+}
+
+.auth-box input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+}
+
+/* 🚀 Primary Button */
+.auth-box form button {
+    width: 60%;
+    padding: 12px;
+    margin-top: 18px;
+
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+    border: none;
+    border-radius: 10px;
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-box form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(20, 184, 166, 0.4);
+}
+
+.auth-box form button:active {
+    transform: scale(0.98);
+}
+
+/* Divider */
+.divider {
+    margin: 20px 0;
+    color: #cbd5f5;
+    font-size: 13px;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* 🔁 Switch Section */
+.auth-switch {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #e0f2f1;
+}
+
+.auth-switch button {
+    margin-top: 8px;
+
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+
+    color: #67e8f9;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.auth-switch button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #67e8f9;
+}

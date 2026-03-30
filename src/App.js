@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Auth from './pages/Auth';
+import Dashboard from './pages/Dashboard';
 import './App.css';
+
+function Home() {
+  return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Home Page</h1></div>;
+}
+
+function Services() {
+  return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Services</h1></div>;
+}
+
+function Solutions() {
+  return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Solutions</h1></div>;
+}
+
+function Courses() {
+  return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Courses</h1></div>;
+}
+
+function Contact() {
+  return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Contact Us</h1></div>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          {/* Existing pages */}
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/contact" element={<Contact />} />
+
+          {/* ✅ ADD THESE */}
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
