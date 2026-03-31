@@ -1,0 +1,46 @@
+.why-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 148, 136, 0.4);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL */
+.why-modal {
+    width: 80%;
+    max-width: 800px;
+
+    padding: 30px;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+
+    color: white;
+
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+/* CLOSE */
+.close-btn {
+    float: right;
+    background: #14b8a6;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* TEXT */
+.why-modal h2 {
+    margin-bottom: 15px;
+}
+
+.why-modal ul {
+    padding-left: 20px;
+}

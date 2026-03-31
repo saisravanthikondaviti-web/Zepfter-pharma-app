@@ -40,6 +40,19 @@ function App() {
           {/* ✅ ADD THESE */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/solutions" element={<Solutions />} />
+
+          {/* ✅ SOLUTION DETAIL ROUTES (ADD THIS) */}
+          <Route path="/solutions/lims" element={<h1>LIMS</h1>} />
+          <Route path="/solutions/data-analytics" element={<h1>Data Analytics</h1>} />
+          <Route path="/solutions/cds" element={<h1>CDS</h1>} />
+          <Route path="/solutions/scm" element={<h1>SCM</h1>} />
+          <Route path="/solutions/sap-attp" element={<h1>SAP ATTP</h1>} />
+          <Route path="/solutions/sap-btp" element={<h1>SAP BTP</h1>} />
+          <Route path="/solutions/csv" element={<h1>CSV</h1>} />
+          <Route path="/solutions/rpa" element={<h1>RPA</h1>} />
+          <Route path="/solutions/ai" element={<h1>AI</h1>} />
         </Routes>
         <Footer />
       </div>

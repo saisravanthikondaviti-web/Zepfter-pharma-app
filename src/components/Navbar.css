@@ -110,3 +110,19 @@
         /* Fallback for mobile views */
     }
 }
+
+/* Make button look like nav link */
+.nav-link-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+
+    padding: 0;
+}
+
+/* Optional hover */
+.nav-link-btn:hover {
+    color: #14b8a6;
+}

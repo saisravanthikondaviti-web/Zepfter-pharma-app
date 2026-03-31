@@ -1,0 +1,157 @@
+/* 🌿 OVERLAY */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 118, 110, 0.35);
+    /* teal overlay */
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999;
+}
+
+/* 🧊 GLASS MODAL */
+.modal-box {
+    width: 90%;
+    max-width: 1000px;
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+
+    animation: fadeIn 0.3s ease;
+}
+
+/* ❌ CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    font-size: 16px;
+    color: #0f172a;
+
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #14b8a6;
+    color: white;
+}
+
+/* TITLE */
+.modal-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* GRID */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ITEM */
+.solution-item {
+    display: flex;
+    gap: 12px;
+
+    padding: 15px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.solution-item:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* ICON */
+.icon {
+    font-size: 22px;
+}
+
+/* TEXT */
+.solution-item h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.solution-item p {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #e0f2f1;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgb(10, 145, 129);
+
+    color: #ffffff;
+    /* 🔥 theme color */
+
+    flex-shrink: 0;
+}
+
+/* make svg look perfect */
+.icon svg {
+    width: 20px;
+    height: 20px;
+}

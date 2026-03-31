@@ -28,9 +28,10 @@ function Footer() {
                     <h4>Quick Links</h4>
                     <ul>
                         <li><Link to="/">Why Zepfter</Link></li>
-                        <li><Link to="/services">Services</Link></li>
-                        <li><Link to="/solutions">Solutions</Link></li>
-                        <li><Link to="/courses">Courses</Link></li>
+                        <Link to="/services">Services</Link>
+                        <Link to="/solutions">Solutions</Link>
+                        <Link to="/courses">Courses</Link>
+                        <Link to="/contact">Contact</Link>
                     </ul>
                 </div>
 
