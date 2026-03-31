@@ -1,7 +1,7 @@
 import { useState } from "react";
 import contactImg from "../assets/contact.png";
 import "./Contact.css";
-
+// 
 function Contact() {
     const [activeIndex, setActiveIndex] = useState(null);
 

@@ -1,0 +1,129 @@
+/* Premium Footer Design */
+.footer {
+    background-color: #0d9488;
+    /* Slate 900 - Dark Mode feel */
+    color: #cbd5e1;
+    /* Slate 300 */
+    padding: 4rem 5% 1.5rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 5rem;
+    /* Spacing from main page content */
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #334155;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    /* Forces all elements inside to stay perfectly left */
+}
+
+.footer-logo {
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+    object-position: left center;
+    margin: -20px 0 -20px -15px;
+    /* Pulls it flush left and reduces vertical spacing */
+    /* Adds a subtle white glow since it sits on a very dark background */
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+.footer-brand p {
+    line-height: 1.6;
+    max-width: 400px;
+    font-size: 0.95rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    /* Transparent subtle circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #0d9488;
+    /* Matches teal brand color */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(13, 148, 136, 0.4);
+}
+
+.footer h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #0d9488;
+    padding-left: 8px;
+    /* Smooth indention on hover */
+}
+
+.footer-contact li {
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+    color: #64748b;
+    /* Slate 500 */
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

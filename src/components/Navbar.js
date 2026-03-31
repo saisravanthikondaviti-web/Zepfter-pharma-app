@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 import "./Navbar.css";
 
 function Navbar() {
@@ -9,14 +10,13 @@ function Navbar() {
             {/* Logo */}
             <div className="logo">
                 <Link to="/">
-                    {/* We assume the provided logo image will be saved as logo.png in the public folder */}
-                    <img src="/logo.png" alt="Zepfter Logo" className="logo-img" />
+                    <img src={logo} alt="Zepfter Logo" className="logo-img" />
                 </Link>
             </div>
 
             {/* Menu */}
             <ul className="nav-links">
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/">Why Zepfter</Link></li>
                 <li><Link to="/services">Services</Link></li>
                 <li><Link to="/solutions">Solutions</Link></li>
                 <li><Link to="/courses">Courses</Link></li>

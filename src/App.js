@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
-import Contact from "./pages/Contact";
+import Contact from './pages/Contact';
 import './App.css';
 
 function Home() {
@@ -23,7 +24,6 @@ function Courses() {
 }
 
 
-
 function App() {
   return (
     <Router>
@@ -41,8 +41,10 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
+
   );
 }
 
