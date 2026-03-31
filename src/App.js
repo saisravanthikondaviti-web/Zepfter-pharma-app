@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import './App.css';
@@ -42,8 +43,10 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
+
   );
 }
 
