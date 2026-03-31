@@ -1,0 +1,351 @@
+/* 🌿 MAIN CONTAINER */
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 70vh;
+    /* adjust for navbar + footer */
+    padding: 60px 60px;
+
+    background: linear-gradient(-45deg, #0f766e, #0d9488, #0891b2, #0f766e);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🎨 Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 🌊 Floating Glass Blobs */
+.contact-container::before,
+.contact-container::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    filter: blur(100px);
+
+    animation: floatSmooth 14s infinite ease-in-out;
+}
+
+/* Top-left blob */
+.contact-container::before {
+    top: -120px;
+    left: -120px;
+}
+
+/* Bottom-right blob */
+.contact-container::after {
+    bottom: -120px;
+    right: -120px;
+    animation-delay: 5s;
+}
+
+/* Blob animation */
+@keyframes floatSmooth {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(40px) scale(1.15);
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* 🔹 LEFT SIDE */
+.contact-left {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* horizontal center */
+    justify-content: center;
+    /* vertical center */
+
+    text-align: center;
+    /* center text */
+
+    padding: 20px;
+
+    color: white;
+}
+
+.contact-left img {
+    width: 100%;
+    max-width: 420px;
+
+    border-radius: 16px;
+    margin-bottom: 25px;
+
+    display: block;
+    /* removes inline gap */
+}
+
+.contact-left img:hover {
+    transform: scale(1.03);
+}
+
+/* Quote */
+.quote {
+    max-width: 420px;
+}
+
+.quote h2 {
+    margin-bottom: 12px;
+}
+
+.quote p {
+    line-height: 1.6;
+}
+
+.contact-left {
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🧊 RIGHT SIDE GLASS CARD */
+.contact-right {
+    flex: 1;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+    color: white;
+
+    animation: fadeRight 0.8s ease;
+}
+
+/* Headings */
+.contact-right h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ccfbf1;
+    margin-bottom: 20px;
+}
+
+/* 📄 FORM */
+.contact-form {
+    width: 100%;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border-radius: 10px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #d1fae5;
+}
+
+/* Focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+}
+
+/* 🚀 BUTTON */
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
+}
+
+/* ✨ Animations */
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .contact-left {
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+}
+
+/* faq css */
+/* 🤍 FAQ SECTION (Clean White Background) */
+.faq-section {
+    padding: 70px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+/* Heading */
+.faq-section h2 {
+    color: #0f172a;
+    margin-bottom: 40px;
+}
+
+/* 📦 FAQ CARD */
+.faq-item {
+    max-width: 700px;
+    margin: 12px auto;
+    padding: 18px 22px;
+
+    background: #f8fafc;
+    /* light card */
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #0d9488;
+}
+
+/* Question */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Plus/Minus */
+.faq-question span {
+    font-size: 20px;
+    color: #0d9488;
+}
+
+/* Answer */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+
+    text-align: left;
+    font-size: 14px;
+    color: #475569;
+
+    transition: all 0.4s ease;
+}
+
+/* Active FAQ */
+.faq-item.active {
+    background: #ffffff;
+    border-color: #0d9488;
+    box-shadow: 0 12px 30px rgba(13, 148, 136, 0.15);
+}
+
+/* Show Answer */
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    margin-top: 10px;
+}

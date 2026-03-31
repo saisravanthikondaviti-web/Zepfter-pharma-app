@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
+import Contact from "./pages/Contact";
 import './App.css';
 
 function Home() {
@@ -21,9 +22,7 @@ function Courses() {
   return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Courses</h1></div>;
 }
 
-function Contact() {
-  return <div style={{ padding: '2rem', textAlign: 'center' }}><h1>Contact Us</h1></div>;
-}
+
 
 function App() {
   return (
