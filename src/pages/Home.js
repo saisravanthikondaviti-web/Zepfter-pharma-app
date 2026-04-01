@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
-import WhyZepfterModal from "../components/WhyZepfterModal";
+import { useNavigate } from "react-router-dom";
+import "../styles/Home.css"; // ✅ correct path
 
 function Home() {
     const [index, setIndex] = useState(0);
-    const [openModal, setOpenModal] = useState(false);
+    const navigate = useNavigate(); // ✅ for navigation
 
     const slides = [
         {
@@ -27,7 +27,7 @@ function Home() {
         }, 3000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [slides.length]); // ✅ fixed warning
 
     return (
         <div className="home">
@@ -38,7 +38,8 @@ function Home() {
                     <h1>{slides[index].title}</h1>
                     <p>{slides[index].text}</p>
 
-                    <button onClick={() => setOpenModal(true)}>
+                    {/* ✅ Navigate instead of modal */}
+                    <button onClick={() => navigate("/whyzepfter")}>
                         Why Zepfter?
                     </button>
                 </div>
@@ -61,12 +62,6 @@ function Home() {
                 <h2>Start Your Pharma-Tech Journey</h2>
                 <p>Learn. Apply. Comply. Grow.</p>
             </section>
-
-            {/* MODAL */}
-            <WhyZepfterModal
-                isOpen={openModal}
-                onClose={() => setOpenModal(false)}
-            />
 
         </div>
     );
