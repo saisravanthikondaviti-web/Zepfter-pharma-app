@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import Contact from './pages/Contact';
+import WhyZepfter from "./components/WhyZepfter";
 import './App.css';
 
 function Home() {
@@ -40,6 +41,8 @@ function App() {
           {/* ✅ ADD THESE */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/whyzepfter" element={<WhyZepfter />} />
 
           <Route path="/solutions" element={<Solutions />} />
 
