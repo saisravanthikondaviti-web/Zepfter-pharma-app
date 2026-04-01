@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
 import SolutionsModal from "./SolutionsModal";
-import WhyZepfterModal from "./WhyZepfterModal"; // ✅ ADD THIS
 
 function Navbar() {
     const [openModal, setOpenModal] = useState(false);
-    const [openWhyModal, setOpenWhyModal] = useState(false); // ✅ ADD THIS
 
     return (
         <>
@@ -23,17 +21,16 @@ function Navbar() {
                 {/* Menu */}
                 <ul className="nav-links">
 
-                    {/* 🔥 UPDATED ONLY THIS */}
+                    {/* ✅ UPDATED: Now routes to page */}
                     <li>
-                        <button
-                            className="nav-link-btn"
-                            onClick={() => setOpenWhyModal(true)}
-                        >
+                        <Link to="/whyzepfter" className="nav-link-btn">
                             Why Zepfter
-                        </button>
+                        </Link>
                     </li>
 
-                    <li><Link to="/services">Services</Link></li>
+                    <li>
+                        <Link to="/services">Services</Link>
+                    </li>
 
                     <li>
                         <button
@@ -44,8 +41,13 @@ function Navbar() {
                         </button>
                     </li>
 
-                    <li><Link to="/courses">Courses</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li>
+                        <Link to="/courses">Courses</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/contact">Contact</Link>
+                    </li>
                 </ul>
 
                 {/* CTA Button */}
@@ -57,16 +59,10 @@ function Navbar() {
 
             </nav>
 
-            {/* ✅ MODALS */}
+            {/* ✅ Solutions Modal (unchanged) */}
             <SolutionsModal
                 isOpen={openModal}
                 onClose={() => setOpenModal(false)}
-            />
-
-            {/* ✅ NEW WHY MODAL */}
-            <WhyZepfterModal
-                isOpen={openWhyModal}
-                onClose={() => setOpenWhyModal(false)}
             />
         </>
     );
