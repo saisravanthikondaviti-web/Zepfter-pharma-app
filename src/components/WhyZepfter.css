@@ -41,7 +41,7 @@
 }
 
 .hero-overlay h1 {
-    font-size: 52px;
+    font-size: 80px;
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -421,4 +421,11 @@
 
 p{
     font-size: 17px;
+}
+
+.brand {
+    background: linear-gradient(90deg, #14b8a6, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }

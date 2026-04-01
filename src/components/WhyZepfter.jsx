@@ -11,7 +11,9 @@ function WhyZepfter() {
             {/* HERO SECTION */}
             <section className="hero">
                 <div className="hero-overlay">
-                    <h1>Why Zepfter?</h1>
+                    <h1>
+                        Why <span className="brand">Zepfter</span>?
+                    </h1>
                     <p>
                         Zepfter is a next-generation Pharmaceutical Training, Management, and Informatics Platform
                         designed to bridge the gap between life sciences and technology. It empowers individuals
@@ -46,7 +48,7 @@ function WhyZepfter() {
             <section className="image-section" style={{ backgroundColor: "#0d9488" }}>
                 <img src={pharmaImg} alt="Pharma Training" />
                 <div>
-                    <h2 style={{color:"#e2e8f0"}}>Integrated Pharma Learning</h2>
+                    <h2 style={{ color: "#e2e8f0" }}>Integrated Pharma Learning</h2>
                     <p>
                         Zepfter combines pharmaceutical sciences with modern digital tools, enabling users to
                         understand real-world workflows such as quality control, regulatory compliance, and
@@ -112,9 +114,9 @@ function WhyZepfter() {
             </section>
 
             {/* IMAGE SECTION */}
-            <section className="image-section reverse"  style={{ backgroundColor: "#0d9488" }}>
+            <section className="image-section reverse" style={{ backgroundColor: "#0d9488" }}>
                 <div>
-                    <h2 style={{color:"#e2e8f0"}}>Data-Driven Pharma Systems</h2>
+                    <h2 style={{ color: "#e2e8f0" }}>Data-Driven Pharma Systems</h2>
                     <p>
                         Modern pharmaceutical industries rely heavily on data-driven decision-making. Zepfter
                         introduces users to analytics, automation, and intelligent systems that optimize
@@ -141,7 +143,7 @@ function WhyZepfter() {
                 </div>
             </section>
 
-            
+
             {/* PHILOSOPHY */}
             <section className="why-section center">
                 <h2>Core Philosophy</h2>
@@ -156,7 +158,7 @@ function WhyZepfter() {
 
             {/* USERS */}
             <section className="why-section" style={{ backgroundColor: "#0d9488" }} >
-                <h2 style={{color:"#e2e8f0"}}>Who Is Zepfter For</h2>
+                <h2 style={{ color: "#e2e8f0" }}>Who Is Zepfter For</h2>
 
                 <div className="audience-grid">
                     <div className="audience-card">
@@ -194,7 +196,7 @@ function WhyZepfter() {
             </section>
 
             <section className="why-section" style={{ backgroundColor: "#0d9488" }}>
-                <h2 style={{color:"#e2e8f0"}}>Career Opportunities with Zepfter</h2>
+                <h2 style={{ color: "#e2e8f0" }}>Career Opportunities with Zepfter</h2>
 
                 <p className="section-desc">
                     Zepfter prepares users for a wide range of roles in the pharmaceutical and
