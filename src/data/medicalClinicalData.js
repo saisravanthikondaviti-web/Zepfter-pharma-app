@@ -4,7 +4,7 @@ const medicalClinicalData = {
   name: "Medical & Clinical Courses",
   category: "Courses",
   image: medicalImg,
-  description: "Medical + Clinical",
+  description: "Medical and clinical training focused on healthcare, diagnostics, patient care, and research.",
 
   subcategories: [
     {

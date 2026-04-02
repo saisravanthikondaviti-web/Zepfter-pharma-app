@@ -9,15 +9,15 @@ function Footer() {
             <div className="footer-container">
                 {/* Brand Section */}
                 <div className="footer-brand">
-                 <h2 className="footer-title">ZEPFTER</h2>
+                    <h2 className="footer-title">ZEPFTER</h2>
                     <p>
                         Bridging healthcare and technology for a smarter tomorrow. We provide cutting-edge solutions for modern challenges.
                     </p>
                     <div className="social-icons">
-                        <a href="#" className="social-icon">IN</a>
-                        <a href="#" className="social-icon">FB</a>
-                        <a href="#" className="social-icon">TW</a>
-                        <a href="#" className="social-icon">IG</a>
+                        <button className="social-icon">IN</button>
+                        <button className="social-icon">FB</button>
+                        <button className="social-icon">TW</button>
+                        <button className="social-icon">IG</button>
                     </div>
                 </div>
 
