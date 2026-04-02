@@ -17,6 +17,8 @@ import CSV from "./pages/solutions/CSV";
 import RPA from "./pages/solutions/RPA";
 import AI from "./pages/solutions/AI";
 import ServicesPage from "./pages/ServicesPage";
+import Courses from "./pages/Courses";
+
 import './App.css';
 
 
@@ -29,13 +31,7 @@ function Solutions() {
   );
 }
 
-function Courses() {
-  return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Courses</h1>
-    </div>
-  );
-}
+
 
 function App() {
   return (
