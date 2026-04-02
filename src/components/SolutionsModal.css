@@ -14,9 +14,9 @@
 
 /* 🧊 MODAL BOX (NO GLASS) */
 .modal-box {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
-    padding: 35px;
+    padding: 40px;
 
     border-radius: 16px;
 

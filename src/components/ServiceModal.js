@@ -9,8 +9,8 @@ function ServiceModal({ service, onClose }) {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+    <div className="modalbox-overlay" onClick={onClose}>
+      <div className="modaltype-box" onClick={(e) => e.stopPropagation()}>
 
         {/* Close Button */}
         <span className="close-btn" onClick={onClose}>×</span>
