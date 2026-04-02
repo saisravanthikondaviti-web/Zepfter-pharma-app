@@ -1,0 +1,15 @@
+import { FaFlask, FaIndustry, FaClipboardCheck, FaWarehouse, FaCogs } from "react-icons/fa";
+const pharmaSkillsData = [
+  { title: "Quality Assurance", desc: "Ensures product quality and standards" },
+  { title: "Quality Control / Analysis", desc: "Testing and validation of pharma products" },
+  { title: "R&D", desc: "Research and drug development" },
+  { title: "Manufacturing", desc: "Production of pharmaceutical products" },
+  { title: "Regulatory Affairs", desc: "Compliance with global regulations" },
+  { title: "LIMS", desc: "Laboratory data management systems" },
+  { title: "GMP / GLP / GDP", desc: "Industry quality standards" },
+  { title: "Validation / Calibration", desc: "Equipment validation process" },
+  { title: "Warehouse Management", desc: "Inventory and storage handling" },
+  { title: "Audit & Compliance", desc: "Inspection and compliance checks" }
+];
+
+export default pharmaSkillsData;

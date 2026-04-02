@@ -7,15 +7,19 @@ import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import WhyZepfter from "./components/WhyZepfter";
+import LIMS from "./pages/solutions/LIMS";
+import DataAnalytics from "./pages/solutions/DataAnalytics";
+import CDS from "./pages/solutions/CDS";
+import SupplyChain from "./pages/solutions/SupplyChain";
+import SAPATTP from "./pages/solutions/SAPATTP";
+import SAPBTP from "./pages/solutions/SAPBTP";
+import CSV from "./pages/solutions/CSV";
+import RPA from "./pages/solutions/RPA";
+import AI from "./pages/solutions/AI";
+import ServicesPage from "./pages/ServicesPage";
 import './App.css';
 
-function Services() {
-  return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Services</h1>
-    </div>
-  );
-}
+
 
 function Solutions() {
   return (
@@ -42,7 +46,7 @@ function App() {
         <Routes>
           {/* Main Pages */}
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
@@ -55,15 +59,15 @@ function App() {
           <Route path="/whyzepfter" element={<WhyZepfter />} />
 
           {/* Solution Detail Pages */}
-          <Route path="/solutions/lims" element={<h1>LIMS</h1>} />
-          <Route path="/solutions/data-analytics" element={<h1>Data Analytics</h1>} />
-          <Route path="/solutions/cds" element={<h1>CDS</h1>} />
-          <Route path="/solutions/scm" element={<h1>SCM</h1>} />
-          <Route path="/solutions/sap-attp" element={<h1>SAP ATTP</h1>} />
-          <Route path="/solutions/sap-btp" element={<h1>SAP BTP</h1>} />
-          <Route path="/solutions/csv" element={<h1>CSV</h1>} />
-          <Route path="/solutions/rpa" element={<h1>RPA</h1>} />
-          <Route path="/solutions/ai" element={<h1>AI</h1>} />
+          <Route path="/solutions/lims" element={<LIMS />} />
+          <Route path="/solutions/data-analytics" element={<DataAnalytics />} />
+          <Route path="/solutions/cds" element={<CDS />} />
+          <Route path="/solutions/scm" element={<SupplyChain />} />
+          <Route path="/solutions/sap-attp" element={<SAPATTP />} />
+          <Route path="/solutions/sap-btp" element={<SAPBTP />} />
+          <Route path="/solutions/csv" element={<CSV />} />
+          <Route path="/solutions/rpa" element={<RPA />} />
+          <Route path="/solutions/ai" element={<AI />} />
         </Routes>
 
         <Footer />

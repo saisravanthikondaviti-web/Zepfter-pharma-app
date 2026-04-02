@@ -1,0 +1,154 @@
+/* 🌿 WRAPPER */
+.wrapper {
+  background: #f8fafc;
+}
+
+/* 🔥 HERO */
+.hero {
+  height: 50vh;
+  background: url("https://www.alfalaval.com/globalassets/blocks/industries/biotech-and-pharmaceuticals/pharma/medical_ampoule_production_line_at_pharmaceutical-_factory.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HERO OVERLAY */
+.heroOverlay {
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.85),
+    rgba(0, 0, 0, 0.65)
+  );
+  border-radius: 12px;
+}
+
+/* TITLE */
+.title {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+/* DESC */
+.desc {
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* CONTAINER */
+.container {
+  padding: 70px 100px;
+}
+
+/* TOP */
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* IMAGE */
+.image img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* TEXT */
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailText {
+  margin-bottom: 15px;
+  color: #475569;
+}
+
+/* BOTTOM CARDS */
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* LIST */
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #14b8a6;
+}
+
+/* CTA */
+.ctaCenter {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ctaBtn {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #14b8a6, #0f9d8a);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo2.png";
+
 import "./Footer.css";
 
 function Footer() {
@@ -9,9 +9,7 @@ function Footer() {
             <div className="footer-container">
                 {/* Brand Section */}
                 <div className="footer-brand">
-                    <Link to="/">
-                        <img src={logo} alt="Zepfter Logo" className="footer-logo" />
-                    </Link>
+                 <h2 className="footer-title">ZEPFTER</h2>
                     <p>
                         Bridging healthcare and technology for a smarter tomorrow. We provide cutting-edge solutions for modern challenges.
                     </p>

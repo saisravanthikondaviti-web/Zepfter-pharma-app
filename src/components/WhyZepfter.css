@@ -28,6 +28,8 @@
         rgba(15, 23, 42, 0.85),
         rgba(20, 184, 166, 0.65)
     );
+    height: 66vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
