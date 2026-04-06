@@ -2,127 +2,130 @@ import React, { useState } from "react";
 import pharmaData from "../data/pharmaData";
 import medicalClinicalData from "../data/medicalClinicalData";
 import itCoursesData from "../data/itData";
-import pharmaImg from "../assets/pharma.png";
-import medicalImg from "../assets/medical.png";
-import { FaArrowRight } from "react-icons/fa";
+// import pharmaImg from "../assets/pharma.png";
+// import medicalImg from "../assets/medical.png";
+// import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./Courses.css";
 
 const Courses = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedModule, setSelectedModule] = useState(null);
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
+  const [showModal, setShowModal] = useState(false);
+  const [activeModule, setActiveModule] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
   const navigate = useNavigate();
 
   const modules = [pharmaData, medicalClinicalData, itCoursesData];
 
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  const handleClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <div className="courses-page">
+    <div className="courses-container">
 
-      {/* 🔥 COURSE CARDS */}
-      <div className="courses-grid">
-        {modules.map((module, i) => (
-          <div className="course-item" key={i}>
+      {/* COURSE CARDS */}
+      {modules.map((module, i) => (
+        <div className="course-card" key={i}>
 
-            {/* IMAGE */}
-            <div className="course-item-image">
-              <img
-                src={
-                  module.image ||
-                  (i === 0
-                    ? pharmaImg
-                    : i === 1
-                    ? medicalImg
-                    : "https://images5.alphacoders.com/135/1351189.png")
-                }
-                alt={module.name}
-              />
-            </div>
-
-            {/* CONTENT */}
-            <div className="course-item-body">
-              <h2 className="course-title">{module.name}</h2>
-
-              <p className="course-category">
-                {module.category}
-              </p>
-
-              <p className="course-description">
-                {module.description}
-              </p>
-
-              <button
-                className="course-btn"
-                onClick={() => {
-                  setOpenModal(true);
-                  setSelectedModule(module);
-                  setExpandedIndex(null);
-                }}
-              >
-                Explore <FaArrowRight />
-              </button>
-            </div>
-
+          {/* IMAGE */}
+          <div className="course-image">
+            <img
+              src={
+                module.image ||
+                "https://images5.alphacoders.com/135/1351189.png"
+              }
+              alt={module.name}
+            />
           </div>
-        ))}
-      </div>
 
-      {/* 🔥 MODAL */}
-      {openModal && selectedModule && (
-        <div className="courses-modal-overlay">
-          <div className="courses-modal">
+          {/* CONTENT */}
+          <div className="course-content">
+            <h2>{module.name}</h2>
+
+            <p className="category">
+              Category: {module.category}
+            </p>
+
+            {/* ✅ DYNAMIC DESCRIPTION */}
+            <p className="description">
+              {module.description}
+            </p>
+
+            <button
+              className="explore-btn"
+              onClick={() => {
+                setShowModal(true);
+                setActiveModule(module);
+                setActiveIndex(null);
+              }}
+            >
+              Explore Now
+            </button>
+          </div>
+        </div>
+      ))}
+
+      {/* MODAL */}
+      {showModal && activeModule && (
+        <div className="modal-overlay">
+          <div className="modal-box">
 
             {/* CLOSE */}
             <span
-              className="modal-close"
+              className="close-btn"
               onClick={() => {
-                setOpenModal(false);
-                setExpandedIndex(null);
+                setShowModal(false);
+                setActiveIndex(null);
               }}
             >
               ✕
             </span>
 
-            <h2 className="modal-heading">{selectedModule.name}</h2>
+            {/* ✅ DYNAMIC TITLE */}
+            <h2 className="modal-title">
+              {activeModule.name}
+            </h2>
 
-            <div className="modules-list">
-              {selectedModule.subcategories.map((item, index) => (
-                <div key={index} className="module-item">
+            {/* SUBCATEGORY LIST */}
+            <div className="grid">
+              {activeModule.subcategories.map((item, index) => (
+                <div key={index}>
 
-                  {/* HEADER */}
-                  <div className="module-header">
+                  {/* TITLE */}
+                  <div
+                    className={`grid-card ${activeIndex === index ? "active" : ""
+                      }`}
+                  >
+                    {/* LEFT SIDE */}
                     <div
-                      className="module-left"
-                      onClick={() => toggleExpand(index)}
+                      style={{ display: "flex", alignItems: "center", gap: "10px", flex: 1 }}
+                      onClick={() => handleClick(index)}   // 👈 expand description
                     >
-                      <span className="module-icon">📘</span>
+                      <div className="icon">📘</div>
                       <h4>{item.title}</h4>
                     </div>
 
-                    <span
-                      className="module-arrow"
+                    {/* RIGHT SIDE ARROW */}
+                    <div
+                      className="arrow"
                       onClick={() =>
                         navigate("/module", {
-                          state: item.modules?.[0],
+                          state: item.modules?.[0]   // 👈 FIRST MODULE ONLY
                         })
                       }
                     >
                       ➡️
-                    </span>
+                    </div>
                   </div>
-
-                  {/* EXPAND */}
-                  {expandedIndex === index && (
-                    <div className="module-details">
+                  {/* DETAILS */}
+                  {activeIndex === index && (
+                    <div className="desc-box">
                       <p>{item.description || item.desc}</p>
 
                       {item.duration && (
-                        <small>Duration: {item.duration}</small>
+                        <small>
+                          Duration: {item.duration}
+                        </small>
                       )}
                     </div>
                   )}
@@ -134,6 +137,7 @@ const Courses = () => {
           </div>
         </div>
       )}
+
     </div>
   );
 };

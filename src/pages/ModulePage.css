@@ -1,0 +1,139 @@
+/* MAIN CONTAINER */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 40px;
+  background: #f8fafc;
+}
+
+/* CARD STYLE (IMPORTANT) */
+.hero-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* LEFT CONTENT */
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 28px;
+  color: #0d9488;
+  margin-bottom: 10px;
+}
+
+.hero-desc {
+  margin: 15px 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.hero-duration {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* IMAGE FIX (MOST IMPORTANT) */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 350px;   /* prevents overflow */
+  height: 220px;      /* fixed height */
+  object-fit: cover;  /* keeps image clean */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* SKILLS */
+.hero-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.hero-skills span,
+.skill-btn {
+  background: #0d9488;
+  color: white;
+  padding: 6px 12px;
+  margin: 3px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+
+.skill-btn:hover,
+.hero-skills span:hover {
+  background: #14b8a6;
+}
+
+.skill-btn.active {
+  background: #0f766e;
+}
+
+/* DYNAMIC SKILL CONTENT BOX */
+.skill-content {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: #ecfeff;
+  border-left: 4px solid #0d9488;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.skill-content h4 {
+  margin-bottom: 8px;
+  color: #0d9488;
+}
+
+/* ENROLL BUTTON */
+.enroll-btn {
+  margin-top: 20px;
+  background: #0d9488;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.enroll-btn:hover {
+  background: #0f766e;
+}
+
+/* 📱 RESPONSIVE (VERY IMPORTANT) */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-skills {
+    justify-content: center;
+  }
+}
