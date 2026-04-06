@@ -27,6 +27,13 @@ function ServiceModal({ service, onClose }) {
             <h2>{service.title}</h2>
             <p>{service.fullDesc}</p>
 
+            {/* ✅ BULLET POINTS */}
+            <ul className="modal-points">
+              {service.points?.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+
             <button className="contact-btn" onClick={handleContact}>
               Contact Us
             </button>

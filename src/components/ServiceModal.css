@@ -13,10 +13,13 @@
 
 .modaltype-box {
   background: white;
-  width: 700px;
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
+  width: 900px;
+  min-height: 350px; /* 👈 better than fixed height */
+  border-radius: 16px;
+  padding: 30px;
+
+  display: flex;
+  align-items: center; /* 👈 center entire content */
 }
 
 .close-btn {
@@ -29,7 +32,8 @@
 
 .modal-content {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  align-items: center;   /* 👈 vertical center */
 }
 
 .modal-image img {
@@ -41,6 +45,11 @@
 
 .modal-text {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 👈 vertical center */
+  align-items: center;       /* 👈 horizontal center */
+  text-align: center;        /* 👈 text center */
 }
 
 .modal-text h2 {
@@ -55,4 +64,28 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+
+  align-self: center;  /* 👈 ensures perfect centering */
+}
+
+.modal-points {
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.modal-points li {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-points li::before {
+  content: "✔";
+  color: #14b8a6;
+  font-weight: bold;
 }

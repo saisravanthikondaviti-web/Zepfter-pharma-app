@@ -9,7 +9,7 @@ function WhyZepfter() {
         <div className="why-page">
 
             {/* HERO SECTION */}
-            <section className="hero">
+            <section className="hero-section">
                 <div className="hero-overlay">
                     <h1>
                         Why <span className="brand">Zepfter</span>?

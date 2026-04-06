@@ -21,8 +21,8 @@
 }
 
 .logo-img {
-    height: 140px;
-    width: auto;
+    height: 90px;
+    width: 300px;
     object-fit: contain;
     margin: -20px 0;
     /* Makes the logo 40px taller visually without pushing the navbar bigger */
