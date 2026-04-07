@@ -68,7 +68,7 @@ const Courses = () => {
       {/* MODAL */}
       {showModal && activeModule && (
         <div className="modal-overlay">
-          <div className="modal-box">
+          <div className="modal-boxblock">
 
             {/* CLOSE */}
             <span

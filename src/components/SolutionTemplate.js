@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../pages/solutions/SolutionPage.module.css";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const SolutionTemplate = ({
   title,
@@ -10,6 +12,10 @@ const SolutionTemplate = ({
   detailedContent = [],
   useCases = [],
 }) => {
+
+  // ✅ State for popup
+  const [showDemoForm, setShowDemoForm] = useState(false);
+
   return (
     <div className={styles.wrapper}>
 
@@ -79,10 +85,79 @@ const SolutionTemplate = ({
 
         {/* CTA */}
         <div className={styles.ctaCenter}>
-          <button className={styles.ctaBtn}>Request Demo</button>
+          <button
+            className={styles.ctaBtn}
+            onClick={() => setShowDemoForm(true)}
+          >
+            Request Demo
+          </button>
         </div>
 
       </div>
+
+      {/* 🔥 POPUP FORM */}
+      {showDemoForm && (
+        <div
+          className="popup-overlay"
+          onClick={() => setShowDemoForm(false)}
+        >
+          <div
+            className="popup-form"
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            {/* Close */}
+            <span
+              className="close-icon"
+              onClick={() => setShowDemoForm(false)}
+            >
+              ✕
+            </span>
+
+            <h2>Request Demo</h2>
+            <p className="popup-subtitle">
+              Our team will contact you soon
+            </p>
+
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+
+                const name = e.target[0].value;
+                const email = e.target[1].value;
+                const phone = e.target[2].value;
+
+                try {
+                  await addDoc(collection(db, "demoRequests"), {
+                    name,
+                    email,
+                    phone,
+                    solution: title,
+                    createdAt: new Date()
+                  });
+
+                  alert(
+                    "After submitting the form, you'll receive a call from our executive soon!! 📞"
+                  );
+
+                  setShowDemoForm(false);
+                } catch (error) {
+                  console.error(error);
+                  alert("Failed to submit request ❌");
+                }
+              }}
+            >
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email Address" required />
+              <input type="tel" placeholder="Phone Number" required />
+
+              <button type="submit">Submit Request</button>
+            </form>
+
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

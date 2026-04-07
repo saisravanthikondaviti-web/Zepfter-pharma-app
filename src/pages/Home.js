@@ -34,6 +34,13 @@ function Home() {
         return () => clearInterval(interval);
     }, []);
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        setUser(storedUser);
+    }, []);
+
     return (
         <div className="home">
 
@@ -55,7 +62,7 @@ function Home() {
                     <p>{heroSlides[index].text}</p>
 
                     <div className="hero-buttons">
-                        <button onClick={() => navigate("/auth")}>
+                        <button onClick={() => navigate(user ? "/services" : "/auth")}>
                             Get Started
                         </button>
                         <button
@@ -134,7 +141,7 @@ function Home() {
 
                     <button
                         className="about-btn"
-                        onClick={() => navigate("/auth")}
+                        onClick={() => navigate(user ? "/services" : "/auth")}
                     >
                         Explore Programs →
                     </button>
@@ -332,14 +339,14 @@ function Home() {
                     <div className="cta-buttons">
                         <button
                             className="primary-btn"
-                            onClick={() => navigate("/auth")}
+                            onClick={() => navigate(user ? "/courses" : "/auth")}
                         >
                             Start Learning →
                         </button>
 
                         <button
                             className="secondary-btn"
-                            onClick={() => navigate("/courses")}
+                            onClick={() => navigate(user ? "/courses" : "/auth")}
                         >
                             Explore Programs
                         </button>

@@ -22,11 +22,11 @@
 }
 
 /* LEFT CONTENT */
-.hero-content {
+.hero-contenttype {
   flex: 1;
 }
 
-.hero-content h1 {
+.hero-contenttype h1 {
   font-size: 28px;
   color: #0d9488;
   margin-bottom: 10px;
@@ -120,6 +120,122 @@
   background: #0f766e;
 }
 
+/* Overlay with slight blur */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 35, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Popup Box */
+.popup-form {
+  background: #ffffff;
+  padding: 35px 30px;
+  width: 380px;
+  border-radius: 18px;
+  position: relative;
+  text-align: center;
+
+  box-shadow: 0 20px 60px #14b8a55e;
+
+  animation: scaleUp 0.3s ease;
+}
+
+/* Gradient Heading */
+.popup-form h2 {
+  margin-bottom: 5px;
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.popup-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Close Icon */
+.close-icon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+  transition: 0.2s;
+}
+
+.close-icon:hover {
+  color: #14b8a6;
+}
+
+/* Form */
+.popup-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Inputs */
+.popup-form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  transition: 0.2s;
+}
+
+.popup-form input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 2px #14b8a55e;
+}
+
+/* Button */
+.popup-form button {
+  margin-top: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background:linear-gradient(135deg, #14b8a6, #0ea5e9);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px #14b8a55e;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* 📱 RESPONSIVE (VERY IMPORTANT) */
 @media (max-width: 768px) {
   .hero-wrapper {
@@ -137,3 +253,4 @@
     justify-content: center;
   }
 }
+

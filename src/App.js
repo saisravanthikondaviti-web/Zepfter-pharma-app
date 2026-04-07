@@ -18,6 +18,7 @@ import RPA from "./pages/solutions/RPA";
 import AI from "./pages/solutions/AI";
 import ServicesPage from "./pages/ServicesPage";
 import Courses from "./pages/Courses";
+import ModulePage from "./pages/ModulePage";
 
 import './App.css';
 
@@ -50,6 +51,7 @@ function App() {
           {/* Auth & Dashboard */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/module" element={<ModulePage />} />
 
           {/* Why Zepfter Page */}
           <Route path="/whyzepfter" element={<WhyZepfter />} />

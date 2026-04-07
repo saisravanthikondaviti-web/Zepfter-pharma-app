@@ -18,14 +18,28 @@ function Auth() {
         e.preventDefault();
 
         try {
+            let userCredential;
+
             if (isSignup) {
-                await createUserWithEmailAndPassword(auth, email, password);
+                userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 alert("Account created successfully!");
             } else {
-                await signInWithEmailAndPassword(auth, email, password);
+                userCredential = await signInWithEmailAndPassword(auth, email, password);
             }
 
-            navigate("/dashboard");
+            // ✅ SAVE USER (IMPORTANT)
+            const user = userCredential.user;
+
+            localStorage.setItem("user", JSON.stringify({
+                email: user.email,
+                uid: user.uid
+            }));
+
+            // ✅ NOTIFY NAVBAR
+            window.dispatchEvent(new Event("authChanged"));
+
+            // ✅ Redirect
+            navigate("/");
 
         } catch (error) {
             alert(error.message);
