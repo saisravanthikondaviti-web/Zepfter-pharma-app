@@ -146,3 +146,66 @@
         grid-template-columns: 1fr;
     }
 }
+/* 🔥 SERVICE MODAL LAYOUT */
+.modal-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* TEXT SIDE */
+.modal-text {
+  flex: 1;
+}
+
+/* IMAGE SIDE */
+.modal-image {
+  flex: 1;
+}
+
+.modal-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* 📱 MOBILE FIX (THIS IS THE KEY 🔥) */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column; /* stack */
+  }
+
+  .modal-text {
+    order: 1; /* text first */
+  }
+
+  .modal-image {
+    order: 2; /* image goes DOWN */
+  }
+}
+/* 📱 MOBILE IMPROVEMENTS */
+@media (max-width: 768px) {
+  .modal-box {
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto; /* 🔥 scroll if content is large */
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr; /* already you added for 900px, but safer */
+    gap: 15px;
+  }
+
+  .solution-item {
+    padding: 12px;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+}

@@ -100,7 +100,17 @@ function Navbar() {
                     {/* 👇 Mobile Profile/Login Section */}
                     <li className="mobile-auth">
                         {!user ? (
-                            <button onClick={() => navigate("/auth")}>
+                            <button
+                                onClick={() => navigate("/auth")}
+                                style={{
+                                    backgroundColor: "#14b8a6",
+                                    color: "#fff",
+                                    padding: "10px 20px",
+                                    border: "none",
+                                    borderRadius: "8px",
+                                    cursor: "pointer"
+                                }}
+                            >
                                 Get Started
                             </button>
                         ) : (
