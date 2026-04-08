@@ -1,39 +1,164 @@
-.App {
-  text-align: center;
+/* 🔥 GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 🌍 BODY */
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  background: #f8fafc;
+  color: #14b8a6;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 📦 GLOBAL CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 📐 GLOBAL SECTION */
+.section {
+  padding: 80px 5%;
+}
+
+/* 📝 TYPOGRAPHY */
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #000000;
+}
+
+/* 🖼️ IMAGES */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* 🔲 GRID SYSTEM */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* 🎯 FLEX UTILITIES */
+.flex {
   display: flex;
-  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🧊 CARD (Reusable everywhere) */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔘 BUTTON */
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
   color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  opacity: 0.9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 📱 RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 30px;
   }
 
-  to {
-    transform: rotate(360deg);
+  .section {
+    padding: 70px 5%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+
+  .container {
+    padding: 0 4%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 50px 4%;
   }
 }

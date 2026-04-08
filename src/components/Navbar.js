@@ -7,14 +7,15 @@ import SolutionsModal from "./SolutionsModal";
 
 function Navbar() {
     const [openModal, setOpenModal] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
     const [user, setUser] = useState(() => {
         return JSON.parse(localStorage.getItem("user"));
     });
-    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const navigate = useNavigate();
 
-    // ✅ Listen for login/logout changes
     useEffect(() => {
         const syncUser = () => {
             const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -22,24 +23,21 @@ function Navbar() {
         };
 
         window.addEventListener("authChanged", syncUser);
-
-        return () => {
-            window.removeEventListener("authChanged", syncUser);
-        };
+        return () => window.removeEventListener("authChanged", syncUser);
     }, []);
 
-    // ✅ Protect navigation
     const handleNavClick = (e, path) => {
         if (!user && path !== "/") {
             e.preventDefault();
             navigate("/auth");
         }
+        setMenuOpen(false); // close menu on click
     };
 
-    // ✅ Logout
     const handleLogout = () => {
         localStorage.removeItem("user");
         window.dispatchEvent(new Event("authChanged"));
+        setMenuOpen(false);
         navigate("/auth");
     };
 
@@ -50,28 +48,26 @@ function Navbar() {
                 {/* Logo */}
                 <div className="logo">
                     <Link to="/">
-                        <img src={logo} alt="Zepfter Logo" className="logo-img" />
+                        <img src={logo} alt="Logo" className="logo-img" />
                     </Link>
                 </div>
 
+                {/* Hamburger */}
+                <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                    ☰
+                </div>
+
                 {/* Menu */}
-                <ul className="nav-links">
+                <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
 
                     <li>
-                        <Link
-                            to="/whyzepfter"
-                            className="nav-link-btn"
-                            onClick={(e) => handleNavClick(e, "/whyzepfter")}
-                        >
+                        <Link to="/whyzepfter" onClick={(e) => handleNavClick(e, "/whyzepfter")}>
                             Why Zepfter
                         </Link>
                     </li>
 
                     <li>
-                        <Link
-                            to="/services"
-                            onClick={(e) => handleNavClick(e, "/services")}
-                        >
+                        <Link to="/services" onClick={(e) => handleNavClick(e, "/services")}>
                             Services
                         </Link>
                     </li>
@@ -82,6 +78,7 @@ function Navbar() {
                             onClick={() => {
                                 if (!user) return navigate("/auth");
                                 setOpenModal(true);
+                                setMenuOpen(false);
                             }}
                         >
                             Solutions
@@ -89,28 +86,38 @@ function Navbar() {
                     </li>
 
                     <li>
-                        <Link
-                            to="/courses"
-                            onClick={(e) => handleNavClick(e, "/courses")}
-                        >
+                        <Link to="/courses" onClick={(e) => handleNavClick(e, "/courses")}>
                             Courses
                         </Link>
                     </li>
 
                     <li>
-                        <Link
-                            to="/contact"
-                            onClick={(e) => handleNavClick(e, "/contact")}
-                        >
+                        <Link to="/contact" onClick={(e) => handleNavClick(e, "/contact")}>
                             Contact
                         </Link>
                     </li>
 
+                    {/* 👇 Mobile Profile/Login Section */}
+                    <li className="mobile-auth">
+                        {!user ? (
+                            <button onClick={() => navigate("/auth")}>
+                                Get Started
+                            </button>
+                        ) : (
+                            <div className="mobile-profile">
+                                <div className="profile-info">
+                                    <img src={profileIcon} alt="Profile" />
+                                    <p>{user?.email}</p>
+                                </div>
+                                <button onClick={handleLogout}>Logout</button>
+                            </div>
+                        )}
+                    </li>
+
                 </ul>
 
-                {/* Right Section */}
-                <div className="nav-btn">
-
+                {/* Desktop Right Section */}
+                <div className="nav-btn desktop-only">
                     {!user ? (
                         <Link to="/auth">
                             <button>Get Started</button>
@@ -127,14 +134,11 @@ function Navbar() {
                             {dropdownOpen && (
                                 <div className="dropdown">
                                     <p className="user-email">{user?.email}</p>
-                                    <button onClick={handleLogout}>
-                                        Logout
-                                    </button>
+                                    <button onClick={handleLogout}>Logout</button>
                                 </div>
                             )}
                         </div>
                     )}
-
                 </div>
 
             </nav>
